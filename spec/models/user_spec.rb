@@ -4,7 +4,7 @@ describe User do
   subject(:user) {User.new}
 
     it "username and password should not be blank" do
-      user.username.should_not==""
+      user.user_name.should_not==""
       user.password.should_not==""
     end
     it "username should be unique"
