@@ -26,7 +26,8 @@ describe Profile do
   end
 
   it "gender should not be empty" do
-    user_profile.first_name.should_not == nil
+    user_profile.gender.should_not == nil
+
   end
 
   it "email should be valid" do
