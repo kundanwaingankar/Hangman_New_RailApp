@@ -17,6 +17,12 @@ describe Profile do
     user_profile.last_name.should_not == nil
     user_profile.last_name.length.should_not == 0
   end
+=begin
+  it "fist_name and last_name should not contain whitespace"do
+    user_profile.first_name.should_not =~ /^\s*$/
+    user_profile.last_name.should_not =~ /^\s*$/
+  end
+=end
 
   it "email should not be empty" do
     user_profile.email.should_not == nil
@@ -24,7 +30,7 @@ describe Profile do
   end
 
   it "gender should not be empty" do
-    user_profile.first_name.should_not == nil
+    user_profile.gender.should_not == nil
   end
 
   it "email should be valid" do
