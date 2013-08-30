@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Game do
-  pending "add some examples to (or delete) #{__FILE__}"
+
 
   subject(:game) { Game.new }
 
@@ -24,5 +24,10 @@ describe Game do
       game.win.should == 6
       game.lose.should == 4
     end
+
   end
+  it "total played game should be equal to win and loss" do
+    game.played.should == (game.win+game.loss)
+  end
+
 end
