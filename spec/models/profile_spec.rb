@@ -4,20 +4,20 @@ describe Profile do
 
   subject(:user_profile) { Profile.new }
 
-  pending "add some examples to (or delete) #{__FILE__}"
+
 
   it "user_id should not be empty" do
     user_profile.user_id.should_not == nil
   end
 
   it "first_name should not be empty" do
-    user_profile.firstName.should_not == nil
-    user_profile.firstName.length.should_not == 0
+    user_profile.first_name.should_not == nil
+    user_profile.first_name.length.should_not == 0
   end
 
   it "last_name should not be empty" do
-    user_profile.lastName.should_not == nil
-    user_profile.lastName.length.should_not == 0
+    user_profile.last_name.should_not == nil
+    user_profile.last_name.length.should_not == 0
   end
 
   it "email should not be empty" do
@@ -27,11 +27,12 @@ describe Profile do
   end
 
   it "gender should not be empty" do
-    user_profile.firstName.should_not == nil
+    user_profile.first_name.should_not == nil
   end
 
   it "email should be valid" do
     #user_profile.
+    user_profile.email.should =~ /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/
   end
 
   it "user_id should exist in user Table or model"
