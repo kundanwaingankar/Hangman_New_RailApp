@@ -15,8 +15,6 @@ describe Profile do
     user_profile.first_name.should_not == nil
     #user_profile.firstname = 'abcd'
     user_profile.first_name.length.should_not == 0
-
-
   end
 
   it "last_name should not be empty" do
