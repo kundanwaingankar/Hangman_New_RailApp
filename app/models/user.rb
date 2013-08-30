@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  validates :user_name, :presence => true ,:message => 'is required' ,:uniqueness => true
-  validates :password, :presence => true ,:message => 'is required'
+  validates :user_name, :presence => true ,:uniqueness => true
+  validates :password, :presence => true
   has_one :profile
   has_one :game
 end
