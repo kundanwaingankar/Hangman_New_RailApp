@@ -4,6 +4,8 @@ describe Profile do
 
   subject(:user_profile) { Profile.new }
 
+
+
   it "user_id should not be empty" do
     user_profile.user_id.should_not == nil
   end
