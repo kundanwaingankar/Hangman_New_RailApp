@@ -2,45 +2,193 @@ require 'spec_helper'
 
 describe Profile do
 
-  subject(:user_profile) { Profile.new }
+  #subject(:user_profile) { Profile.new }
 
+#####################################################
+  context "#initialize" do
 
+    before do
+      @profile = Profile.new
+    end
 
-  it "user_id should not be empty" do
-    user_profile.user_id.should_not == nil
+    it "should respond to first_name" do
+      should respond_to(:first_name)
+    end
+
+    it "should respond to last_name" do
+      should respond_to(:last_name)
+    end
+
+    it "should respond to last_name" do
+      should respond_to(:last_name)
+    end
+
+    it "should respond to gender" do
+      should respond_to(:gender)
+    end
+
+    it "should respond to email" do
+      should respond_to(:email)
+    end
+
+    it "should not respond to data" do
+      should_not respond_to(:data)
+    end
   end
 
-  it "first_name should not be empty" do
-      user_profile.first_name.should_not == nil
-      user_profile.first_name.length.should_not == 0
+   context "#relation" do
+
+     it "should belongs to user" do
+       p = Profile.reflect_on_association(:user)
+       p.macro.should == :belongs_to
+     end
+     # or
+     ###
+     #it { should belongs_to(:user) }
+     ###
+   end
+
+  #####################################################
+
+  #context "#initialdata" do
+  #
+  #  subject(:user_profile) { Profile.new }
+  #
+  #  it "user_id should not be empty" do
+  #    user_profile.user_id.should == nil
+  #  end
+  #
+  #  it "first_name should not be empty" do
+  #    user_profile.first_name.should == nil
+  #    user_profile.first_name.length.should == 0
+  #  end
+  #
+  #  it "last_name should not be empty" do
+  #    user_profile.last_name.should == nil
+  #    user_profile.last_name.length.should == 0
+  #  end
+  #
+  #  it "email should not be empty" do
+  #    user_profile.email.should == nil
+  #    user_profile.email.length.should_not == 0
+  #  end
+  #
+  #  it "gender should not be empty" do
+  #    user_profile.gender.should == nil
+  #  end
+  #
+  #  it "email should not be nil" do
+  #    user_profile.should == nil
+  #  end
+  #
+  #  it "user_id should exist in user Table or model"  do
+  #
+  #  end
+  #
+  #  it "email should be unique" do
+  #
+  #  end
+  #
+  #  it "user_id should be unique" do
+  #
+  #  end
+  #
+  #end
+
+  context "#dataValidation" do
+
+    before do
+      @profile = Profile.new
+      @profile.first_name = "john k."
+      @profile.last_name = "jonson"
+      @profile.email = "ravindra@gmail.com"
+      @profile.gender = true
+    end
+
+
+
+    it "Iternia .P as first_name should be valid" do
+      @profile.first_name = "Iternia .p"
+      @profile.should be_valid
+    end
+
+    it "Iternia#123 as first_name should be valid" do
+      @profile.first_name = "Iternia#123"
+      @profile.should_not be_valid
+    end
+
+    it "blank space as first_name should be valid" do
+      @profile.first_name = "     "
+      @profile.should_not be_valid
+    end
+
+
+
+    it "bar as last_name should be valid" do
+      @profile.last_name = "bar"
+      @profile.should be_valid
+    end
+
+    it "bar@ as larst_name should be valid" do
+      @profile.last_name = "bar@"
+      @profile.should_not be_valid
+    end
+
+    it "blank space as first_name should be valid" do
+      @profile.last_name = "   "
+      @profile.should_not be_valid
+    end
+
+    it "abc@gmail.com as email should be valid" do
+      @profile.email = "abc@gmail.com"
+      @profile.should be_valid
+    end
+
+    it "asdc@sdsd as email should be valid" do
+      @profile.email = "asdc@sdsd"
+      @profile.should_not be_valid
+    end
+
+
+    it "blank space as email should be valid" do
+      @profile.email = "    "
+      @profile.should_not be_valid
+    end
+
+
+    it "true as gender should be valid" do
+      @profile.gender = true
+      @profile.should be_valid
+    end
+
+    it "null as gender should not be valid" do
+      @profile.gender = "s"
+      @profile.should_not be_valid
+    end
+
+    it "user_id should exist in user model"  do
+      @profile.user_id.should_not == nil
+      @profile.user_id.should_not == 0
+
+    end
+
   end
 
-  it "last_name should not be empty" do
-    user_profile.last_name.should_not == nil
-    user_profile.last_name.length.should_not == 0
-  end
-=begin
-  it "fist_name and last_name should not contain whitespace"do
-    user_profile.first_name.should_not =~ /^\s*$/
-    user_profile.last_name.should_not =~ /^\s*$/
-  end
-=end
+  context "#uniquness" do
 
-  it "email should not be empty" do
-    user_profile.email.should_not == nil
-    user_profile.email.length.should_not == 0
-  end
+    before do
+      @profile = Profile.new
+    end
 
-  it "gender should not be empty" do
-    user_profile.gender.should_not == nil
-  end
+    #
+    it "email should be unique" do
+      should validate_uniqueness_of(:email)
+    end
 
-  it "email should be valid" do
-    user_profile.email.should =~ /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/
-  end
+    it "user_id should be unique" do
+      should validate_uniqueness_of(:user_id)
+    end
 
-  it "user_id should exist in user Table or model"
-  it "email should be unique"
-  it "user_id should be unique"
+  end
 
 end
