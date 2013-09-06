@@ -36,7 +36,7 @@ describe Profile do
     end
   end
 
-   context "#relation" do
+   context "#association" do
 
      it "should belongs to user" do
        p = Profile.reflect_on_association(:user)
@@ -47,53 +47,6 @@ describe Profile do
      #it { should belongs_to(:user) }
      ###
    end
-
-  #####################################################
-
-  #context "#initialdata" do
-  #
-  #  subject(:user_profile) { Profile.new }
-  #
-  #  it "user_id should not be empty" do
-  #    user_profile.user_id.should == nil
-  #  end
-  #
-  #  it "first_name should not be empty" do
-  #    user_profile.first_name.should == nil
-  #    user_profile.first_name.length.should == 0
-  #  end
-  #
-  #  it "last_name should not be empty" do
-  #    user_profile.last_name.should == nil
-  #    user_profile.last_name.length.should == 0
-  #  end
-  #
-  #  it "email should not be empty" do
-  #    user_profile.email.should == nil
-  #    user_profile.email.length.should_not == 0
-  #  end
-  #
-  #  it "gender should not be empty" do
-  #    user_profile.gender.should == nil
-  #  end
-  #
-  #  it "email should not be nil" do
-  #    user_profile.should == nil
-  #  end
-  #
-  #  it "user_id should exist in user Table or model"  do
-  #
-  #  end
-  #
-  #  it "email should be unique" do
-  #
-  #  end
-  #
-  #  it "user_id should be unique" do
-  #
-  #  end
-  #
-  #end
 
   context "#dataValidation" do
 
@@ -182,7 +135,7 @@ describe Profile do
 
     #
     it "email should be unique" do
-      should validate_uniqueness_of(:email)
+      should validate_uniqueness_of (:email)
     end
 
     it "user_id should be unique" do

@@ -3,8 +3,8 @@ require 'spec_helper'
 describe User do
   before do
     @user = User.new(user_name: "Example User", password: "password1234")
-
   end
+
   subject{@user}
   it { should respond_to(:user_name) }
   it { should respond_to(:password) }
@@ -43,6 +43,25 @@ describe User do
   context "password should contain atleast one number" do
     before { @user.password = "pass2222"}
     it { should be_valid }
+  end
+
+
+  context "#associations" do
+
+    it "should has one profile entry" do
+      p = User.reflect_on_association(:profile)
+      p.macro.should == :has_one
+    end
+
+    it "should has one game entry" do
+      p = User.reflect_on_association(:game)
+      p.macro.should == :has_one
+    end
+
+    # or
+    ###
+    #it { should belongs_to(:user) }
+    ###
   end
 
 end

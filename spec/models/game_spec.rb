@@ -2,8 +2,26 @@ require 'spec_helper'
 
 describe Game do
 
-
   subject(:game) { Game.new }
+
+
+  context "#initialize" do
+
+    it "should have a win data" do
+      should respond_to(:win)
+    end
+
+    it "should have a played data" do
+      should respond_to(:played)
+    end
+
+    it "should have a lose data" do
+      should respond_to(:lose)
+    end
+
+  end
+
+
 
   context ".playing_first_time"  do                      #user is playing game for first time
     it "should have no_of_times_gamePlayed equal to 0" do
@@ -28,6 +46,18 @@ describe Game do
   end
   it "total played game should be equal to win and loss" do
     game.played.should == (game.win+game.loss)
+  end
+
+
+  context "#associations" do
+    it "should belongs to User" do
+      p = Game.reflect_on_association(:user)
+      p.macro.should == :belongs_to
+    end
+    # or
+    ###
+    #it { should belongs_to(:user) }
+    ###
   end
 
 end
