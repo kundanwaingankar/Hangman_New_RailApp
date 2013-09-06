@@ -5,7 +5,6 @@ gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
 gem 'mysql'
-gem 'rspec-rails','2.13.1'
 gem 'haml'
 #gem 'haml-rails','0.3.4'
 
@@ -29,6 +28,12 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
+
+group :test do
+  gem 'rspec-rails','2.13.1'
+  gem 'shoulda-matchers'
+end
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

@@ -9,6 +9,7 @@ describe User do
   it { should respond_to(:user_name) }
   it { should respond_to(:password) }
   it { should be_valid }
+  it { should validate_uniqueness_of(:user_name) }
 
   context "user_name should not be blank" do
     before { @user.user_name = " "}
