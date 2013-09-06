@@ -19,10 +19,6 @@ describe Profile do
       should respond_to(:last_name)
     end
 
-    it "should respond to last_name" do
-      should respond_to(:last_name)
-    end
-
     it "should respond to gender" do
       should respond_to(:gender)
     end
@@ -65,12 +61,12 @@ describe Profile do
       @profile.should be_valid
     end
 
-    it "Iternia#123 as first_name should be valid" do
+    it "Iternia#123 as first_name should not be valid" do
       @profile.first_name = "Iternia#123"
       @profile.should_not be_valid
     end
 
-    it "blank space as first_name should be valid" do
+    it "blank space as first_name should not be valid" do
       @profile.first_name = "     "
       @profile.should_not be_valid
     end
@@ -82,12 +78,12 @@ describe Profile do
       @profile.should be_valid
     end
 
-    it "bar@ as larst_name should be valid" do
+    it "bar@ as last_name should not be valid" do
       @profile.last_name = "bar@"
       @profile.should_not be_valid
     end
 
-    it "blank space as first_name should be valid" do
+    it "blank space as first_name should not be valid" do
       @profile.last_name = "   "
       @profile.should_not be_valid
     end
@@ -97,13 +93,13 @@ describe Profile do
       @profile.should be_valid
     end
 
-    it "asdc@sdsd as email should be valid" do
+    it "asdc@sdsd as email should not be valid" do
       @profile.email = "asdc@sdsd"
       @profile.should_not be_valid
     end
 
 
-    it "blank space as email should be valid" do
+    it "blank space as email should not be valid" do
       @profile.email = "    "
       @profile.should_not be_valid
     end
