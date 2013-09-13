@@ -1,0 +1,12 @@
+%h1 Add New Record
+.table#user_id
+   %form{:action=>"/users",:method => "POST"}
+      %label{:for => "username"} User Name:
+      %input{:name => "username", :type => "text", :value => ""}
+      %br
+      %label{:for => "password"} Password:
+      %input{:name => "password", :type => "password", :value => ""}
+      %br
+      %input{type: "submit", :value => "Submit" }
+      = link_to 'Back', {:action => 'index'}
+

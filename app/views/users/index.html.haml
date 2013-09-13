@@ -1,0 +1,14 @@
+%h1 Welcome to RoR
+.table#user_id
+  %table{ :border => "3"}
+    %tbody
+    -@users.each do |user|
+      %tr
+        %td= user.id
+        %td= user.user_name
+        %td= link_to 'edit', {:action => 'edit', :id =>user.id}
+        %td= link_to 'Show', {:action => 'show',:id =>user.id}
+        %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
+  = link_to 'New', {:action => 'new'}
+
+
