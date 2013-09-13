@@ -4,7 +4,13 @@
 %h4 First Name :- #{@user.profile.first_name}
 %h4 Last Name :- #{@user.profile.last_name}
 %h4 Email :- #{@user.profile.email}
-%h4 Gender :- #{@user.profile.gender}
+-if @user.profile.gender
+  %h4 Gender :- Male
+-else
+  %h4 Gender :- Female
+
+
+
 
 =link_to "Back", users_path
 =link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' }
