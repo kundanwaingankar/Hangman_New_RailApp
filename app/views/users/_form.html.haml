@@ -1,7 +1,8 @@
 -if(@user.errors.any?)
-  %h2 #{@user.errors.count}
-  -@user.errors.full_messages.each do |msg|
-    %p #{msg}
+  .errorBox
+    %h4 #{@user.errors.count} Validation Errors
+    -@user.errors.full_messages.each do |msg|
+      %p #{msg}
 = form_for(@user) do |f|
   %fieldset
     %table
@@ -15,7 +16,30 @@
           %label{for: "password"} Password:
         %td
           %input{type: "password", name: "user[password]", class:"text", value: @user.password}
+      =f.fields_for :profile do |prof|
+        %tr
+          %td
+            =prof.label :first_name
+          %td
+            =prof.text_field :first_name
+        %tr
+          %td
+            =prof.label :last_name
+          %td
+            =prof.text_field :last_name
+        %tr
+          %td
+            =prof.label :email
+          %td
+            =prof.text_field :email
+        %tr
+          %td
+            =prof.label :gender
+          %td
+            =prof.check_box :gender
       %tr
         %td
-        %td
-          %input{type: "submit", value:"Save User", class:"button"}
+          %td
+            %input{type: "submit", value:"Save User", class:"button"}
+
+

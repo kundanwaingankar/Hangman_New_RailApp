@@ -5,6 +5,10 @@
     %tr
       %th= "Name"
       %th= "password"
+      %th= "FirstName"
+      %th= "LastName"
+      %th= "Email"
+      %th= "Gender"
       %th= "Show"
       %th= "Edit"
       %th= "Destroy"
@@ -13,6 +17,10 @@
       %tr
         %td= user.user_name
         %td= user.password
+        %td= user.profile.first_name
+        %td= user.profile.last_name
+        %td= user.profile.email
+        %td= user.profile.gender
         %td
           =link_to 'Show', user
         %td

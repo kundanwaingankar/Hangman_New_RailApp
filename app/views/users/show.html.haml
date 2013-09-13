@@ -3,9 +3,21 @@
   %tr
     %th UserName
     %th Password
+    %th FirstName
+    %th LastName
+    %th Email
+    %th Gender
   %tr
     %td= @user.user_name
     %td= @user.password
+    %td= @user.profile.first_name
+    %td= @user.profile.last_name
+    %td= @user.profile.email
+    %td
+      -if @user.profile.gender
+        Male
+      -else
+        Female
 
 = link_to 'Edit', edit_user_path(@user)
 = link_to 'Back', users_path

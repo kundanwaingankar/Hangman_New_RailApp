@@ -4,6 +4,14 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
+=begin
+    100.times do |i|
+      u = User.new(user_name: "loginname#{i}", password: "password#{i}")
+      u.build_profile(first_name: "firstname", last_name: "lastname", gender: true, email: "asas#{i}@gmail.com" )
+      u.build_game(played: 0, win: 0, lose: 0)
+      u.save
+    end
+=end
     @users=User.all
   end
 
@@ -15,6 +23,7 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
      @user=User.new
+     @user.build_profile
   end
 
   # GET /users/1/edit
@@ -57,7 +66,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:user_name,:password)
+    params.require(:user).permit(:user_name, :password, profile_attributes: [:id, :first_name, :last_name, :email, :gender])
   end
 
 end
