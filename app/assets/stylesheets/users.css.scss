@@ -1,0 +1,27 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.pageWrapper{
+  width: 960px;
+  margin: 0px auto;
+}
+table{
+  border: 2px solid black;
+  border-spacing: 0px;
+  border-collapse: collapse;
+  th{
+   text-align: left;
+    border: 2px solid black;
+  }
+  td{
+     padding-right: 30px;
+    border: 2px solid black;
+  }
+}
+.newUser{
+  display: block;
+  margin-bottom: 20px;
+}
+thead{
+  border-bottom: 2px solid black;
+}
