@@ -1,0 +1,23 @@
+-#
+-#%h1 Hello #{rand(99)}
+-#-@users.each
+-#.table#table
+-#  %t= @users.first.user_name
+-#/%h1 Hello #{rand(100)}
+-#/ %h1= User.find(2).user_name
+-#
+=link_to "Add User", new_user_path
+%h2 All User Data
+%table
+  %thead
+    %tr
+      %th User Name
+      %th User Password
+  %tbody
+    -@users.each do |user|
+      %tr
+        %td= user.user_name
+        %td= user.password
+        %td=link_to 'Show', user_path(user)
+        %td=link_to 'Edit', edit_user_path(user)
+        %td=link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
