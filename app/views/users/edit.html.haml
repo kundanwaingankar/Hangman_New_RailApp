@@ -1,0 +1,14 @@
+=form_for(@users) do |f|
+  .errors
+    -if @users.errors.any?
+      %p An error occurred
+    -@users.errors.full_messages.each do |msg|
+      %li= msg
+  .name
+    =f.label :User_name
+    =f.text_field :user_name
+  .password
+    =f.label :password
+    =f.password_field :password
+  =f.submit
+= link_to 'Back', users_path

@@ -1,0 +1,11 @@
+%h1 New user
+
+%form{:action=>"/users" ,:method => "POST"}
+  %label{:for => "username"} Username:
+  %input{:name => "username", :type => "text", :value => ""}
+  %br
+  %label{:for => "password"} Password:
+  %input{:name => "password", :type => "password", :value => ""}
+  %br
+  %input{:type => "submit", :value => "Save"}
+  %br

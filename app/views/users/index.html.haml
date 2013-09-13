@@ -1,0 +1,19 @@
+%h1 List of users
+
+= link_to 'New', new_user_url
+.table#user_id
+  %table{:border => "1"}
+    %tbody
+      %tr
+        %th ID
+        %th Name
+        %th Edit
+        %th Show
+        %th Delete
+    -@users.each do |u|
+      %tr
+        %td= u.id
+        %td= u.user_name
+        %td= link_to "Edit", {:action => 'edit', :id => u.id}
+        %td= link_to "Show", {:action => 'show', :id => u.id}
+        %td= link_to 'Destroy', u, method: :delete, data: { confirm: 'Are you sure?' }
