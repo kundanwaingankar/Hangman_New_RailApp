@@ -1,0 +1,11 @@
+%h1 Show user Here
+%table
+  %tr
+    %th UserName
+    %th Password
+  %tr
+    %td= @user.user_name
+    %td= @user.password
+
+= link_to 'Edit', edit_user_path(@user)
+= link_to 'Back', users_path

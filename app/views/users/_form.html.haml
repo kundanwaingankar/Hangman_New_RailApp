@@ -1,0 +1,21 @@
+-if(@user.errors.any?)
+  %h2 #{@user.errors.count}
+  -@user.errors.full_messages.each do |msg|
+    %p #{msg}
+= form_for(@user) do |f|
+  %fieldset
+    %table
+      %tr
+        %td
+          %label{for: "name"} UserName:
+        %td
+          %input{type: "text", name: "user[user_name]", class:"text", value: @user.user_name}
+      %tr
+        %td
+          %label{for: "password"} Password:
+        %td
+          %input{type: "password", name: "user[password]", class:"text", value: @user.password}
+      %tr
+        %td
+        %td
+          %input{type: "submit", value:"Save User", class:"button"}

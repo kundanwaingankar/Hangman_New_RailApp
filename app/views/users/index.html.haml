@@ -1,0 +1,21 @@
+%h1 All Users
+%a{href: "users/new", class: "newUser"} New User
+%table
+  %thead
+    %tr
+      %th= "Name"
+      %th= "password"
+      %th= "Show"
+      %th= "Edit"
+      %th= "Destroy"
+  %tbody
+    -@users.each do |user|
+      %tr
+        %td= user.user_name
+        %td= user.password
+        %td
+          =link_to 'Show', user
+        %td
+          =link_to 'Edit', edit_user_path(user)
+        %td
+          =link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
