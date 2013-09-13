@@ -106,7 +106,7 @@ describe Profile do
 
 
     it "true as gender should be valid" do
-      @profile.gender = true
+      @profile.gender = 0
       @profile.should be_valid
     end
 

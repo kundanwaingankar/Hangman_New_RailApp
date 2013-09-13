@@ -1,0 +1,14 @@
+=form_for(@user) do |f|
+  .errors
+    -if @user.errors.any?
+      %p An error occurred
+    -@user.errors.full_messages.each do |msg|
+      %li= msg
+  .name
+    =f.label :User_name
+    =f.text_field :user_name
+  .password
+    =f.label :password
+    =f.password_field :password
+    /=f.text_field :password
+  =f.submit
