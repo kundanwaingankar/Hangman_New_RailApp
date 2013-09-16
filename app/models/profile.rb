@@ -12,5 +12,5 @@ class Profile < ActiveRecord::Base
     self.email = self.email.downcase
   end
 
-  #  /\Afoo\z/
+  #/\Afoo\z/
 end

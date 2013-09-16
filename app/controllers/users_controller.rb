@@ -47,7 +47,6 @@ class UsersController < ApplicationController
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_path }
-      format.json { head :no_content }
     end
   end
 
@@ -66,6 +65,7 @@ class UsersController < ApplicationController
     end
   end
 
+  #calls only within this controller
   private
   def set_user
     @user = User.find(params[:id])

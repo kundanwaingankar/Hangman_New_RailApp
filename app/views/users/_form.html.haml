@@ -24,5 +24,11 @@
         =profile_attributes.text_field :email
       .gender
         =profile_attributes.label :gender
-        =profile_attributes.check_box :gender
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        =profile_attributes.label :gender_true , "Male"
+        =profile_attributes.radio_button :gender, true, :checked => true
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        =profile_attributes.label :gender_false, "False"
+        =profile_attributes.radio_button :gender, false
+        /=profile_attributes.check_box :gender
   =f.submit
