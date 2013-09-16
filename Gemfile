@@ -6,6 +6,7 @@ gem 'rails', '4.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'mysql'
 gem 'haml'
+gem 'bootstrap-sass'
 #gem 'haml-rails','0.3.4'
 
 # Use SCSS for stylesheets

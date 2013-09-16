@@ -20,7 +20,11 @@
         %td= user.profile.first_name
         %td= user.profile.last_name
         %td= user.profile.email
-        %td= user.profile.gender
+        %td
+          -if user.profile.gender
+            Male
+          -else
+            Female
         %td
           =link_to 'Show', user
         %td

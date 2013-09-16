@@ -36,7 +36,11 @@
           %td
             =prof.label :gender
           %td
-            =prof.check_box :gender
+
+            =prof.radio_button :gender ,"True",checked: true
+            =prof.label :gender_true ,"Male"
+            =prof.radio_button :gender ,"False"
+            =prof.label :gender_false,"Female"
       %tr
         %td
           %td
