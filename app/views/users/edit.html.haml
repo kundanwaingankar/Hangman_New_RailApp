@@ -10,5 +10,20 @@
   .password
     =f.label :password
     =f.password_field :password
+  .profile
+    =f.fields_for :profile do |profile_attributes|
+      .firstName
+      =profile_attributes.label :first_name
+      =profile_attributes.text_field :first_name
+      .lastName
+      =profile_attributes.label :last_name
+      =profile_attributes.text_field :last_name
+      .email
+      =profile_attributes.label :email
+      =profile_attributes.text_field :email
+      .gender
+      =profile_attributes.label :gender
+      =profile_attributes.check_box :gender
   =f.submit
+
 = link_to 'Back', users_path
