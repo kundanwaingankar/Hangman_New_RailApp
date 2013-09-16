@@ -7,5 +7,21 @@
   %label{:for => "password"} Password:
   %input{:name => "password", :type => "password", :value => ""}
   %br
+  %label{:for => "first_name"} First name:
+  %input{:name => "first_name", :type => "text", :value => ""}
+  %br
+  %label{:for => "last_name"} Last name:
+  %input{:name => "last_name", :type => "text", :value => ""}
+  %br
+  %label{:for => "email"} email:
+  %input{:name => "email", :type => "email", :value => ""}
+  %br
+  %label{:for => "gender"} Gender:
+  %br
+  %input{:name => "gender", :type => "radio", :value => 1} Male
+  %br
+  %input{:name => "gender", :type => "radio", :value => 0} Female
+  %br
   %input{:type => "submit", :value => "Save"}
+  = link_to 'Back', users_path
   %br

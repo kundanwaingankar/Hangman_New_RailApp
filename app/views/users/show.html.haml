@@ -1,10 +1,13 @@
+-#%h2= notice
+-flash.each do |name, msg|
+  %h2= msg
 %h2 Showing Users Data
-%h3 User Name := #{@user.user_name}
-%h3 Password := #{@user.password}
-%h3 First Name :- #{@user.profile.first_name}
-%h3 Last Name :- #{@user.profile.last_name}
-%h3 Email :- #{@user.profile.email}
--if @user.profile.gender
+%h3 User Name :- #{@users.user_name}
+%h3 Password :- #{@users.password}
+%h3 First Name :- #{@users.profile.first_name}
+%h3 Last Name :- #{@users.profile.last_name}
+%h3 Email :- #{@users.profile.email}
+-if @users.profile.gender
   %h3 Gender :- Male
 -else
   %h3 Gender :- Female
