@@ -32,9 +32,10 @@ class UsersController < ApplicationController
     @users = User.find(params[:id])
     if @users.update_attributes(user_params)
       redirect_to :action => 'show', :id => @users, alert: 'Successfully updated...'
+      flash[:notice] = "Successfully saved!"
     else
       render :action => 'edit'
-      #flash[:notice] = "Successfully saved!"
+
     end
   end
 
