@@ -1,0 +1,15 @@
+@import "bootstrap";
+body { padding-top: 60px; }
+@import "bootstrap-responsive";
+form{
+  label{
+    display: inline;
+  }
+  input[type="text"],input[type="password"]{
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  input[type="radio"]{
+    margin: 0px 10px 0px 10px;
+  }
+}
