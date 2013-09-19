@@ -15,3 +15,9 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+//= require jquery_nested_form
+
+
+//$('.profile input').clone().each(function(){
+//    $(this).attr('name', $(this).attr('name').replace("0", "10"));
+//    $(this).attr('id', $(this).attr('id').replace("0", "10"))}).appendTo('.multipleProfile')

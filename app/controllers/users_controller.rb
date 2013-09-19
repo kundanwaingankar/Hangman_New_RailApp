@@ -19,8 +19,9 @@ class UsersController < ApplicationController
   #new user
   def new
     @user = User.new
-    @user.build_profile
-    @user.build_game(win: 0, lose: 0, played: 0)
+    @user.profile.build
+    #@user.profile.build
+    #@user.build_game(win: 0, lose: 0, played: 0)
   end
 
   # show a user record

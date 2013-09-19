@@ -11,13 +11,24 @@ gem 'bootstrap-sass'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
+=begin
 
+  Devise
+  twitter bootstrap rails
+  simple form
+  nested_forms
+  open authentication 2
+  omni auth
+  cors.xml
+  open ldap
+
+=end
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
-
+gem "nested_form"
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
