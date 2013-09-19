@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   def new
      @user=User.new
      @user.build_profile
-  end
+ end
 
   # GET /users/1/edit
   def edit
@@ -37,6 +37,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      UserMailer.welcome_email(@user).deliver
       redirect_to @user
     else
       render action: 'new'

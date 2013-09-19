@@ -3,7 +3,7 @@
     %h4 #{@user.errors.count} Validation Errors
     -@user.errors.full_messages.each do |msg|
       %p #{msg}
-= form_for(@user) do |f|
+= nested_form_for (@user) do |f|
   %fieldset
     %table
       %tr
@@ -37,13 +37,19 @@
             =prof.label :gender
           %td
 
-            =prof.radio_button :gender ,"True",checked: true
+            =prof.radio_button :gender ,true,checked: true
             =prof.label :gender_true ,"Male"
-            =prof.radio_button :gender ,"False"
+            =prof.radio_button :gender ,false
             =prof.label :gender_false,"Female"
+        %tr
+          %td
+            =prof.link_to_remove "remove"
       %tr
         %td
           %td
             %input{type: "submit", value:"Save User", class:"button"}
+      %tr
+        %td
+          -#=f.link_to_add "Add a task", :profiles
 
 

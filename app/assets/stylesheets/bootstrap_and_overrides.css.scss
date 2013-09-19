@@ -13,3 +13,64 @@ form{
     margin: 0px 10px 0px 10px;
   }
 }
+table{
+  border:1px solid black;
+  border-collapse: collapse;
+  border-spacing: 0;
+  td,th{
+    border:1px solid black;
+  }
+}
+table.displayData {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 2px solid black;
+  thead, tbody, tr, td, th {
+    display: block;
+    border:none;
+
+  }
+  tr{
+    border-bottom: 1px solid black;
+  }
+  tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+  }
+
+  thead{
+    /* fallback */
+    width: 97%;
+    /* minus scroll bar width */
+    width: calc(100% - 17px);
+    th {
+      height: 30px;
+      line-height: 30px;
+      /*text-align: left;*/
+      width: 10.68%;
+      float: left;
+      border-right: 1px solid black;
+    }
+    th:last-child{
+      border-right: none;
+    }
+  }
+
+  tbody {
+    height: 600px;
+    overflow-y: auto;
+    border-top: 2px solid black;
+    td{
+      width: 10.68%;
+      float: left;
+      border-right: 1px solid black;
+    }
+    td:last-child{
+      border-right: none;
+    }
+  }
+
+}

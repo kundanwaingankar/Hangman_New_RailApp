@@ -7,6 +7,7 @@ gem 'rails', '4.0.0'
 gem 'mysql'
 gem 'haml'
 gem 'bootstrap-sass'
+gem "nested_form"
 #gem 'haml-rails','0.3.4'
 
 # Use SCSS for stylesheets

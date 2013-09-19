@@ -5,19 +5,6 @@
   width: 960px;
   margin: 0px auto;
 }
-table{
-  border: 2px solid black;
-  border-spacing: 0px;
-  border-collapse: collapse;
-  th{
-   text-align: left;
-    border: 2px solid black;
-  }
-  td{
-     padding-right: 30px;
-    border: 2px solid black;
-  }
-}
 .errorBox{
   border:1px solid red;
   margin-bottom: 20px;
@@ -25,7 +12,4 @@ table{
 .newUser{
   display: block;
   margin-bottom: 20px;
-}
-thead{
-  border-bottom: 2px solid black;
 }
